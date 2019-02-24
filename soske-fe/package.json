@@ -1,0 +1,43 @@
+{
+  "name": "empty-project-template",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "lint": "tslint src/**/*.ts",
+    "tsc": "tsc",
+    "clean": "rimraf build",
+    "build": "yarn run clean && yarn run tsc --",
+    "watch": "yarn run build -- -w",
+    "watchAndRunAndroid": "concurrently \"yarn run watch\" \"yarn run android\"",
+    "buildRunAndroid": "yarn run build && yarn run watchAndRunAndroid ",
+    "watchAndRunIOS": "concurrently \"yarn run watch\" \"yarn run ios\"",
+    "buildRunIOS": "yarn run build && yarn run watchAndRunIOS ",
+    "watchAndStart": "concurrently \"yarn run watch\" \"yarn run start\"",
+    "buildAndStart": "yarn run build && yarn run watchAndStart "
+  },
+  "dependencies": {
+    "apollo-boost": "^0.1.28",
+    "expo": "^31.0.2",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "react": "16.5.0",
+    "react-apollo": "^2.4.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-navigation": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/expo": "^32.0.3",
+    "@types/jest": "^24.0.6",
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "@types/react-native": "^0.57.38",
+    "@types/react-navigation": "^3.0.3",
+    "@types/react-test-renderer": "^16.8.1",
+    "concurrently": "^4.1.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.3333"
+  }
+}
